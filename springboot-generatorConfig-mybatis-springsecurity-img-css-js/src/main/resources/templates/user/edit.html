@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"  
+  layout:decorator="layout">  
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	</head>
+	<body>
+		<form th:action="@{/user/update}" method="post" th:object="${tuser}">
+			<input type="text" th:field="*{name}"><br/>
+			<input type="text" th:field="*{pwd}"><br/>
+			<input type="number" th:field="*{age}"><br/>
+			<input type="text" th:field="*{adddress}"><br/>
+			<input type="submit">
+		</form>
+	</body>
+</html>

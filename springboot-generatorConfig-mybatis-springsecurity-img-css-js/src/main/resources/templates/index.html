@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"  
+  layout:decorator="layout">  
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/my.css}"/>
+	</head>
+	<body>
+		<table>
+			<tr th:each="user,userStat:${users}" th:class="${userStat.odd}?'odd':'even'">
+				<td th:text="${user.name}"></td>
+				<td th:text=${user.pwd}></td>
+				<td th:text="${user.age}"></td>
+				<td th:text="${user.address}"></td> 
+				<td th:text="${userStat.index+1}"></td>
+			</tr>
+		</table>
+		<a th:href="@{/user/add}">添加</a>
+		<br/>
+		<img th:src="@{/img/1.jpg}"/>
+	</body>
+	<script type="text/javascript" th:src="@{/js/my.js}"></script>
+</html>
